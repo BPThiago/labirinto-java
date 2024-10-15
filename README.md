@@ -52,12 +52,7 @@ O projeto utiliza arquivos CSV para representar labirintos, onde:
 2. Compile o código utilizando uma IDE Java ou pelo terminal:
 
    ```bash
-   javac br/ifes/tecprogavancada/labirinto/*.java
-
-3. Execute o programa:
-
-   ```bash
-   java br.ifes.tecprogavancada.labirinto.Main
+   mvn clean install
 
 4. Observação: Certifique-se de que o arquivo CSV do labirinto esteja no caminho especificado no código (mazes/6x8.csv) ou ajuste conforme necessário.
 
