@@ -12,7 +12,8 @@ public class MazePanel extends JPanel {
 
     public MazePanel(Maze maze) {
         this.maze = maze;
-        this.solution = new ArrayList<>(maze.runner());  // Armazena o caminho na ordem correta
+        this.maze.runner();
+        this.solution = new ArrayList<>(maze.getSolution());  // Armazena o caminho na ordem correta
 
         // Configura o timer para mover o quadrado
         this.timer = new Timer(500, e -> moveNext());  // Atualiza a cada 500ms (meio segundo)
@@ -35,6 +36,7 @@ public class MazePanel extends JPanel {
 
         this.setBackground(Color.black);
 
+
         // Desenha o labirinto
         for (int i = 0; i < this.maze.getHeight(); i++) {
             for (int j = 0; j < this.maze.getWidth(); j++) {
@@ -45,11 +47,18 @@ public class MazePanel extends JPanel {
             }
         }
 
+        for (Node n : maze.getWalkedNodes()){
+            g.setColor(Color.lightGray);
+            g.fillRect(n.y * 50, n.x * 50, 50, 50);
+        }
+
         // Desenha o caminho percorrido até o momento (de cima para baixo)
         g.setColor(Color.red);
         for (int i = 0; i <= currentStep; i++) {
             Node step = solution.get(i);
             g.fillRect(step.y * 50, step.x * 50, 50, 50);
         }
+
+
     }
 }

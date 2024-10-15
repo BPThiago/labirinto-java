@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class Main {
     public static void main(String[] args) {
-        Maze maze = new Maze("mazes/6x8.csv");
+        Maze maze = new Maze("C:\\Users\\Davidson\\Desktop\\labirinto-java\\TAD_Labirinto\\mazes\\20x20.csv");
 
         JFrame frame = new JFrame("Maze Solution");
         MazePanel panel = new MazePanel(maze);

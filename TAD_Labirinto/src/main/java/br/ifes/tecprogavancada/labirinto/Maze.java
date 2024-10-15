@@ -8,18 +8,28 @@ import java.awt.*;
 public class Maze {
     ArrayList<ArrayList<Integer>> maze;
 
+    private Set<Node> walkedNodes;
+
+    private Stack<Node> stack;
+
     public Maze(String csvFilename) {
         this.maze = loadMaze(csvFilename);
+        this.walkedNodes = null;
+        this.stack = null;
     }
 
     public Maze(ArrayList<ArrayList<Integer>> maze) {
         this.maze = maze;
+        this.walkedNodes = null;
+        this.stack = null;
     }
 
-    public Stack<Node> runner() throws IllegalArgumentException {
+
+    public void runner() throws IllegalArgumentException {
         ArrayList<ArrayList<Integer>> maze = this.copyMaze();
-        Stack<Node> stack = new Stack<>();
-        Set<Node> walkedNodes = new HashSet<>();
+        stack = new Stack<>();
+        walkedNodes = new HashSet<>();
+
 
         Node head = getStartPoint();
         if (head == null)
@@ -45,7 +55,6 @@ public class Maze {
             }
         } while (!isBorder(head));
 
-        return stack;
     }
 
     private Node getStartPoint() {
@@ -125,4 +134,13 @@ public class Maze {
     public int getHeight() {
         return this.maze.size();
     }
+
+    public Set<Node> getWalkedNodes() {
+        return walkedNodes;
+    }
+
+    public Stack<Node> getSolution() {
+        return stack;
+    }
+
 }
