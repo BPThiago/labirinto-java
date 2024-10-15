@@ -47,7 +47,7 @@ O projeto utiliza arquivos CSV para representar labirintos, onde:
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/maze-solver.git
+   https://github.com/BPThiago/labirinto-java.git
 
 2. Compile o código utilizando uma IDE Java ou pelo terminal:
 
