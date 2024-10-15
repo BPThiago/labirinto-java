@@ -16,7 +16,6 @@ public class Main {
 
         Insets insets = frame.getInsets();
         frame.setSize(maze.getWidth()*50 + insets.left + insets.right, maze.getHeight()*50 + insets.top + insets.bottom);
-        System.out.println(maze.getWidth()*50 + insets.left + insets.right + " " + maze.getHeight()*50 + insets.top + insets.bottom);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
